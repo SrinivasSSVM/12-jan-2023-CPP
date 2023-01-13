@@ -1,0 +1,424 @@
+ Name:- Sanapala Srinivas Murthy
+Mail:- harryhurryi4u@gmail.com
+
+
+1). 1) C++ Program to count the total number of characters in a string
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    string input_string;
+    int count = 0;
+
+    cout << "Enter a string: ";
+    getline(cin, input_string);
+
+    for(int i = 0; i < input_string.length(); i++) {
+        count++;
+    }
+
+    cout << "The total number of characters in the string is: " << count << endl;
+    return 0;
+}
+
+Output:-
+Enter a string: Srinivas
+The total number of characters in the string is: 8
+
+2) C++ Program to count the total number of punctuation characters exists in a String
+#include <iostream>
+using namespace std;
+int main() {
+    string input_string;
+    int count = 0;
+    string punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+    cout << "Enter a string: ";
+    getline(cin, input_string);
+
+    for(int i = 0; i < input_string.length(); i++) {
+        if (punctuation.find(input_string[i]) != string::npos) {
+            count++;
+        }
+    }
+
+    cout << "The total number of punctuation characters in the string is: " << count << endl;
+    return 0;
+}
+
+Output:-
+Enter a string: hello, World!
+The total number of punctuation characters in the string is: 2
+
+
+
+3). C++ Program to count the total number of vowels and consonants in a string
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    string str;
+    int vowels = 0, consonants = 0;
+    cout << "Enter a string: ";
+    getline(cin, str);
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' || 
+            str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U')
+            vowels++;
+        else if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+            consonants++;
+    }
+    cout << "Vowels: " << vowels << endl;
+    cout << "Consonants: " << consonants << endl;
+    return 0;
+}
+
+Output:
+Enter a string: Amurathavalli
+Vowels: 6
+Consonants: 7
+
+
+
+4). C++ Program to determine whether two strings are the anagram
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool isAnagram(string s1, string s2) {
+    int count[26] = {0};
+    for (int i = 0; i < s1.length(); i++) {
+        count[s1[i] - 'a']++;
+    }
+    for (int i = 0; i < s2.length(); i++) {
+        count[s2[i] - 'a']--;
+    }
+    for (int i = 0; i < 26; i++) {
+        if (count[i] != 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    string s1, s2;
+    cout << "Enter the first string: ";
+    cin >> s1;
+    cout << "Enter the second string: ";
+    cin >> s2;
+    if (isAnagram(s1, s2)) {
+        cout << "The strings are anagrams." << endl;
+    } else {
+        cout << "The strings are not anagrams." << endl;
+    }
+    return 0;
+}
+
+Output:-
+
+Enter the first string: LISTEN
+Enter the second string: silent
+The strings are not anagrams.
+
+
+
+
+
+
+
+
+
+
+
+
+
+5). C++ Program to divide a string in 'N' equal parts.
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    string s;
+    int n;
+    cout << "Enter a string: ";
+    getline(cin, s);
+    cout << "Enter the number of parts to divide the string into: ";
+    cin >> n;
+    int part_length = s.length() / n;
+    cout << "The divided parts are: " << endl;
+    for (int i = 0; i < s.length(); i += part_length) {
+        cout << s.substr(i, part_length) << endl;
+    }
+    return 0;
+}
+
+Output:-
+Enter a string: Maheshbabu
+Enter the number of parts to divide the string into: 2
+The divided parts are: 
+Mahes
+Hbabu
+6). C++ Program to find Reverse of the string
+
+#include <iostream>
+using namespace std;
+
+void reverseStr(string& str)
+{
+	int n = str.length();
+
+	for (int i = 0; i < n / 2; i++)
+		swap(str[i], str[n - i - 1]);
+}
+
+int main()
+{
+	string str = "Srinivas";
+	reverseStr(str);
+	cout << str;
+	return 0;
+}
+
+Output:-
+
+savinirS
+
+
+
+
+7). C++ Program to replace lower-case characters with upper-case and vice-versa
+#include <iostream>
+using namespace std;
+int main() {
+    string s;
+    cout << "Enter a string: ";
+    getline(cin, s);
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (islower(s[i]))
+        {
+            s[i] = toupper(s[i]);
+        } else if (isupper(s[i]))
+        {
+            s[i] = tolower(s[i]);
+        }
+    }
+    cout << "Modified string: " << s << endl;
+    return 0;
+}
+Output:-
+Enter a string: SriNiVas
+Modified string: sRInIvAS
+8).
+
+ Name:- Sanapala Srinivas Murthy
+Mail:- harryhurryi4u@gmail.com
+
+
+1). 1) C++ Program to count the total number of characters in a string
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    string input_string;
+    int count = 0;
+
+    cout << "Enter a string: ";
+    getline(cin, input_string);
+
+    for(int i = 0; i < input_string.length(); i++) {
+        count++;
+    }
+
+    cout << "The total number of characters in the string is: " << count << endl;
+    return 0;
+}
+
+Output:-
+Enter a string: Srinivas
+The total number of characters in the string is: 8
+
+2) C++ Program to count the total number of punctuation characters exists in a String
+#include <iostream>
+using namespace std;
+int main() {
+    string input_string;
+    int count = 0;
+    string punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+    cout << "Enter a string: ";
+    getline(cin, input_string);
+
+    for(int i = 0; i < input_string.length(); i++) {
+        if (punctuation.find(input_string[i]) != string::npos) {
+            count++;
+        }
+    }
+
+    cout << "The total number of punctuation characters in the string is: " << count << endl;
+    return 0;
+}
+
+Output:-
+Enter a string: hello, World!
+The total number of punctuation characters in the string is: 2
+
+
+
+3). C++ Program to count the total number of vowels and consonants in a string
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    string str;
+    int vowels = 0, consonants = 0;
+    cout << "Enter a string: ";
+    getline(cin, str);
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' || 
+            str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U')
+            vowels++;
+        else if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+            consonants++;
+    }
+    cout << "Vowels: " << vowels << endl;
+    cout << "Consonants: " << consonants << endl;
+    return 0;
+}
+
+Output:
+Enter a string: Amurathavalli
+Vowels: 6
+Consonants: 7
+
+
+
+4). C++ Program to determine whether two strings are the anagram
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool isAnagram(string s1, string s2) {
+    int count[26] = {0};
+    for (int i = 0; i < s1.length(); i++) {
+        count[s1[i] - 'a']++;
+    }
+    for (int i = 0; i < s2.length(); i++) {
+        count[s2[i] - 'a']--;
+    }
+    for (int i = 0; i < 26; i++) {
+        if (count[i] != 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    string s1, s2;
+    cout << "Enter the first string: ";
+    cin >> s1;
+    cout << "Enter the second string: ";
+    cin >> s2;
+    if (isAnagram(s1, s2)) {
+        cout << "The strings are anagrams." << endl;
+    } else {
+        cout << "The strings are not anagrams." << endl;
+    }
+    return 0;
+}
+
+Output:-
+
+Enter the first string: LISTEN
+Enter the second string: silent
+The strings are not anagrams.
+
+
+
+
+
+
+
+
+
+
+
+
+
+5). C++ Program to divide a string in 'N' equal parts.
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    string s;
+    int n;
+    cout << "Enter a string: ";
+    getline(cin, s);
+    cout << "Enter the number of parts to divide the string into: ";
+    cin >> n;
+    int part_length = s.length() / n;
+    cout << "The divided parts are: " << endl;
+    for (int i = 0; i < s.length(); i += part_length) {
+        cout << s.substr(i, part_length) << endl;
+    }
+    return 0;
+}
+
+Output:-
+Enter a string: Maheshbabu
+Enter the number of parts to divide the string into: 2
+The divided parts are: 
+Mahes
+Hbabu
+6). C++ Program to find Reverse of the string
+
+#include <iostream>
+using namespace std;
+
+void reverseStr(string& str)
+{
+	int n = str.length();
+
+	for (int i = 0; i < n / 2; i++)
+		swap(str[i], str[n - i - 1]);
+}
+
+int main()
+{
+	string str = "Srinivas";
+	reverseStr(str);
+	cout << str;
+	return 0;
+}
+
+Output:-
+
+savinirS
+
+
+
+
+7). C++ Program to replace lower-case characters with upper-case and vice-versa
+#include <iostream>
+using namespace std;
+int main() {
+    string s;
+    cout << "Enter a string: ";
+    getline(cin, s);
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (islower(s[i]))
+        {
+            s[i] = toupper(s[i]);
+        } else if (isupper(s[i]))
+        {
+            s[i] = tolower(s[i]);
+        }
+    }
+    cout << "Modified string: " << s << endl;
+    return 0;
+}
+Output:-
+Enter a string: SriNiVas
+Modified string: sRInIvAS
